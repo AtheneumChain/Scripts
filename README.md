@@ -1,5 +1,5 @@
 # Automated Masternode Setup
-(click here)[https://github.com/AtheneumChain/Scripts/tree/master/Masternode%20Setup]
+[click here](https://github.com/AtheneumChain/Scripts/tree/master/Masternode%20Setup)
 
 # Atheneum Information Scriptlet 
 to download:
