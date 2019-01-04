@@ -21,4 +21,5 @@ to execute the script:
 aem datadir command1 [arg1]
 ```
 ex. : aem Atheneum getinfo
+
 ex2.: aem Atheneum2 masternode status
