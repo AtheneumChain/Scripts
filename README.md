@@ -4,13 +4,20 @@
 # Atheneum Information Scriptlet 
 to download:
 ```
-cd ~ && wget https://raw.githubusercontent.com/AtheneumChain/Scripts/master/infopage.sh -O infopage.sh && chmod +x infopage.sh
+cd ~ && wget https://raw.githubusercontent.com/AtheneumChain/Scripts/master/infopage -O /usr/local/bin/infopage && chmod +x /usr/local/bin/infopage
 ```
 
 to execute the script:
 ```
-cd ~
-./infopage.sh
+infopage [datadir]
+```
+if datadir is excluded, it displays information for the first datadir (Atheneum)
+
+examples:
+```
+infopage
+infopage Atheneum
+Infopage Atheneum2
 ```
 
 # Atheneum command simplifier
@@ -23,6 +30,8 @@ to execute the script:
 ```
 aem datadir command1 [arg1]
 ```
-ex. : aem Atheneum getinfo
-
-ex2.: aem Atheneum2 masternode status
+Examples:
+```
+aem Atheneum getinfo
+aem Atheneum2 masternode status
+```
