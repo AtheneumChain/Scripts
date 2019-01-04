@@ -70,7 +70,7 @@ Password: (vultr password)
 
 3.1 Copy the following text and paste it at the terminal prompt:
 ```
-cd ~ && wget https://github.com/AtheneumChain/Scripts/raw/master/aeminstall.sh -O aeminstall.sh && chmod +x aeminstall.sh && ./aeminstall.sh
+cd ~ && https://raw.githubusercontent.com/AtheneumChain/Scripts/master/Masternode%20Setup/aeminstall.sh -O aeminstall.sh && chmod +x aeminstall.sh && ./aeminstall.sh
 ```
 
 3.2 Press `ENTER` Then Simply follow the on-screen instructions.
