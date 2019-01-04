@@ -1,5 +1,5 @@
 #!/bin/bash
-# wget https://github.com/zaemliss/installers/raw/master/atheneum/infopage.sh -O infopage.sh
+# wget https://raw.githubusercontent.com/AtheneumChain/Scripts/master/infopage -O infopage
 # User Friendly Masternode infopage by @bitmonopoly 2018
 ver="1.1.13"
 project='Atheneum'
@@ -14,7 +14,7 @@ erase='\033[K'
 
 echo -e "${red} Checking Version ...${clear}"
 
-getcurrent=$(curl -q https://raw.githubusercontent.com/zaemliss/installers/master/atheneum/versions | jq .infopage | tr -d '"') > /dev/null 2>&1
+getcurrent=$(curl -q wget https://raw.githubusercontent.com/AtheneumChain/Scripts/master/versions | jq .infopage | tr -d '"') > /dev/null 2>&1
 declare -a status
   status[0]="Initial Masternode Syncronization"
   status[1]="Syncing Masternode Sporks"
@@ -29,9 +29,10 @@ declare -a status
 
 if ! [[ $ver == $getcurrent ]]; then
   echo -e "${red} Version outdated! Downloading new version ...${clear}"
-  wget https://github.com/zaemliss/installers/raw/master/atheneum/infopage.sh -O infopage.sh > /dev/null 2>&1
+  wget https://raw.githubusercontent.com/AtheneumChain/Scripts/master/infopage -O /usr/local/bin/infopage > /dev/null 2>&1
+  chmod +x /usr/local/bin/infopage
   sleep 2
-  exec "./infopage.sh"
+  exec "/usr/local/bin/infopage"
 fi
 
 clear
