@@ -4,6 +4,8 @@
 3. you need to edit some files through SSH and restart the server.
 4. you need to download some files, copy some files and edit some files. Then you're done.
 
+** This is the same procedure for the 3rd node as it is for the 2nd one **
+
 ## Step 1: make sure you have sent the coins for your new masternode(s) beforehand.
 This takes 15 confirmations before you can activate new nodes. This procedure takes considerably less time than that so make sure you do the coin send beforehand so you don't waste any time waiting. Also, make sure you lock the wallet once you've done the send so you don't accidentally stake and break your inputs.
 
@@ -93,11 +95,26 @@ aem Atheneum stop
 copy the masternode genkey, then do:
 ```
 cp -r ~/.Atheneum ~/.Atheneum2
+aem Atheneum start
 ```
-then edit the config file and replace the following info with your new IP address:
+Note that we restart the first node right after so it doesn't go missing. </br>
+
+Next edit the config file for the copy and replace the info with your new IP address and masternode genkey:
 ```
 nano ~/.Atheneum2/atheneum.conf
 ```
 ![Image Aemconf](https://github.com/AtheneumChain/Scripts/blob/master/images/aemconf.png) </br>
 
+Press CTRL-X, Y and ENTER to save and exit.
+
+Now if everything was edited properly, you should be able to start the node with:
+```
+aem Atheneum2 start
+```
+you can check the progress of the sync and the state of that instance by doing
+```
+infopage Atheneum2
+```
+
+All you need to do next is to activate that new node from your QT wallet.
 
