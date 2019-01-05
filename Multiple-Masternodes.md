@@ -18,7 +18,7 @@ Once in the console, type:
 ```
 sudo nano /etc/network/interfaces
 ```
-enter your password when prompted and paste the following:
+enter your password when prompted and paste the following at the end of the file:
 
 ```
 auto ens3:0
@@ -31,8 +31,20 @@ iface ens3:1 inet static
 address 3rd_ip_address_here
 netmask 255.255.255.0
 ```
-Replace ` 2nd_ip_address_here ` and ` 3rd_ip_address_here ` with the new IPs that Vultr assigned to you. In the example above, it would look like this:
+Replace ` 2nd_ip_address_here ` and ` 3rd_ip_address_here ` with the new IPs that Vultr assigned to you. In the example above, the full file would look like this:
 ```
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+#source /etc/network/interfaces.d/*
+
+auto lo
+iface lo inet loopback
+
+auto ens3
+iface ens3 inet dhcp
+iface ens3 inet6 auto
+
 auto ens3:0
 iface ens3:0 inet static
 address 108.61.245.238
