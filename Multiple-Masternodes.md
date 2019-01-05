@@ -69,4 +69,35 @@ sudo reboot now
 
 ## Step 4: Download a few utilities and clone the data
 
-(TO BE CONTINUED)
+Copy and paste this into your console session (SSH)
+```
+wget https://raw.githubusercontent.com/AtheneumChain/Scripts/master/infopage -O /usr/local/bin/infopage && chmod +x /usr/local/bin/infopage
+
+wget -q https://raw.githubusercontent.com/AtheneumChain/Scripts/master/aem -O /usr/local/bin/aem && chmod +x /usr/local/bin/aem
+```
+The first utility (infopage) helps get information using the data folders without having to do several commands and formats them in an easy-to-understand manner.
+
+The second one (aem) allows to interact with the nodes by specifying the datafolders
+
+We're going to start by using the infopage utility to get the current block height
+```
+infopage Atheneum
+```
+
+1. Check the 'blocks' parameter and make sure it's the same as the AEM Discord bot OR the explorer OR your QT wallet. Press CTRL-C to exit
+2. Get a new masternode genkey then shut down the daemon to prepare for copying
+```
+aem Atheneum masternode genkey
+aem Atheneum stop
+```
+copy the masternode genkey, then do:
+```
+cp -r ~/.Atheneum ~/.Atheneum2
+```
+then edit the config file and replace the following info with your new IP address:
+```
+nano ~/.Atheneum2/atheneum.conf
+```
+![Image Aemconf](https://github.com/AtheneumChain/Scripts/blob/master/images/aemconf.png) </br>
+
+
