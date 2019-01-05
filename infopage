@@ -32,23 +32,31 @@ if ! [[ $ver == $getcurrent ]]; then
   wget https://raw.githubusercontent.com/AtheneumChain/Scripts/master/infopage -O /usr/local/bin/infopage > /dev/null 2>&1
   chmod +x /usr/local/bin/infopage
   sleep 2
-  exec "/usr/local/bin/infopage"
+  exec "/usr/local/bin/infopage $1"
 fi
 
 clear
-while [ 1 ]; do
-  getinfo=$($client getinfo)
-  gettxoutsetinfo=$($client gettxoutsetinfo)
-  getwinner=$($client getpoolinfo)
+if [ -z "$1" ]; then
+  datadir='/root/.Atheneum'
+  conf='/root/.Atheneum/atheneum.conf'
+else
+  datadir="/root/.$1"
+  conf="/root/.$1/atheneum.conf"
+fi
 
-  ismasternode=$(cat ~/.Atheneum/atheneum.conf | grep -c masternode)
+while [ 1 ]; do
+  getinfo=$($client -datadir=$datadir -conf=$conf getinfo)
+  gettxoutsetinfo=$($client -datadir=$datadir -conf=$conf gettxoutsetinfo)
+  getwinner=$($client -datadir=$datadir -conf=$conf getpoolinfo)
+
+  ismasternode=$(cat $datadir/atheneum.conf | grep -c masternode)
   if ! [[ $ismasternode == "0" ]]; then
-    mnstatus=$($client masternode debug)
+    mnstatus=$($client -datadir=$datadir -conf=$conf masternode debug)
   else
     mnstatus="This is not a masternode"  
   fi
-  mnsync=$($client mnsync status)
-  count=$($client masternode list | grep -c addr | awk '{print $0"                             "}')
+  mnsync=$($client -datadir=$datadir -conf=$conf mnsync status)
+  count=$($client -datadir=$datadir -conf=$conf masternode list | grep -c addr | awk '{print $0"                             "}')
   winner=$(echo $getwinner | jq .current_masternode | tr -d '"' | awk '{print $0"                             "}')
 
   version=$(echo $getinfo | jq .version | awk '{print $0"                             "}')
@@ -62,7 +70,7 @@ while [ 1 ]; do
   asset=$(echo $mnsync | jq .RequestedMasternodeAssets)
   attempt=$(echo $mnsync | jq .RequestedMasternodeAttempt)
 
-  logresult=$(tail -n 11 ~/.Atheneum/debug.log | pr -T -o 2 | cut -c 1-80 | awk '{printf("%.80s \n", $0"                                                    ")}')
+  logresult=$(tail -n 11 $datadir/debug.log | pr -T -o 2 | cut -c 1-80 | awk '{printf("%.80s \n", $0"                                                    ")}')
 
   #clear
   tput cup 0 0
