@@ -64,9 +64,13 @@ netmask 255.255.255.0
 
 then press CTRL-X, Y and ENTER to save and exit the file.
 
-next reboot the computer for the changes to take effect. Log back into the server via SSH to proceed to the next step
+next restart the networking service or reboot the computer for the changes to take effect. Log back into the server via SSH to proceed to the next step
 ```
 sudo reboot now
+```
+or
+```
+systemctl restart networking.service
 ```
 
 ## Step 4: Download a few utilities and clone the data
