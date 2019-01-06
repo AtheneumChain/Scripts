@@ -19,7 +19,7 @@ if ! [[ $ver == $getcurrent ]]; then
   sleep 2
   exec "./updater.sh"
 fi
-
+ 
 red='\033[1;31m'
 grn='\033[1;32m'
 yel='\033[1;33m'
