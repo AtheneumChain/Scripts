@@ -214,7 +214,7 @@ function copy_binaries()
     echo -e "${BLUE}Copying Binaries...${NC}"
     mkdir $PROJECT_FOLDER
     cd $PROJECT_FOLDER
-    wget -q https://github.com/AtheneumChain/Atheneum/releases/download/v1.0.0.1/Ubuntu16.04-Headless_1.0.0.1.zip -O ./ubuntu.zip
+    wget -q https://github.com/AtheneumChain/Atheneum/releases/download/Latest/Ubuntu16.04-Headless_Latest.zip -O ./ubuntu.zip
     unzip -o ubuntu.zip
     
     if [ $? -ne 0 ]; then
