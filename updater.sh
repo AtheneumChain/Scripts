@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ver="1.0.1"
+ver="1.0.2"
 PROJECT="Atheneum"
 DATAFOLDER=".Atheneum"
 CONFIG="atheneum.conf"
@@ -33,6 +33,8 @@ echo
 client=$(find / -name $CLI_BINARY | head -n 1) > /dev/null 2>&1
 workDir=$(dirname "$client")
 
+echo -e "${blu}Found ${yel}$client ${blu}in ${yel}$workDir ...${clr}"
+sleep 2
 #Get number of existing masternode directories
 DIR_COUNT=$(ls -la /root/ | grep "\.Atheneum" | grep -c '^')
 
