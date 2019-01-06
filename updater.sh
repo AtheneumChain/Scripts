@@ -36,7 +36,7 @@ workDir=$(dirname "$client")
 echo -e "${blu}Found ${yel}$client ${blu}in ${yel}$workDir ...${clr}"
 sleep 2
 #Get number of existing masternode directories
-DIR_COUNT=$(ls -la /root/ | grep "\.Atheneum" | grep -c '^')
+DIR_COUNT=$(ls -la /root/ | grep "\$DATAFOLDER" | grep -c '^')
 
 if [[ $DIR_COUNT -lt 1 ]]; then
   echo -e "${red}No data directories found! Please make sure you have $PROJECT Masternodes installed on this server.${clr}"
