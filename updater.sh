@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ver="1.0.3"
+ver="1.0.4"
 PROJECT="Atheneum"
 DATAFOLDER=".Atheneum"
 FINDFOLDER="\.Atheneum"
@@ -66,7 +66,9 @@ rm $workDir/$DAEMON_BINARY
 rm $workDir/$CLI_BINARY
 
 wget -q https://github.com/AtheneumChain/Atheneum/releases/download/Latest/Ubuntu16.04-Headless_Latest.zip -O $workDir/ubuntu.zip
-unzip -o $workDir/ubuntu.zip
+cd $workDir
+unzip -o ubuntu.zip
+cd ~
 
 chmod +x $workDir/$DAEMON_BINARY $workDir/$CLI_BINARY
 echo -e "${grn}Starting Daemon using datadir /$DATAFOLDER"
