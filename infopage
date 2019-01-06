@@ -123,6 +123,7 @@ function allNodes()
           echo -e "${blue}Masternode ${green}$DATAFOLDER$i ${blue}status : ${yellow}$STATUS${clear}           "
         done
     fi
+    sleep 2
   done
 }
 
