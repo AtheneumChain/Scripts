@@ -127,7 +127,7 @@ function allNodes()
   done
 }
 
-if [[ -z "$1" ]] || [[ "$1" -ne "all" ]]; then
+if [ -z "$1" ] || [ "$1" -ne "all" ]; then
   singleNode
 else
   allNodes
