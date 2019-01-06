@@ -1,8 +1,9 @@
 #!/bin/bash
 
-ver="1.0.2"
+ver="1.0.3"
 PROJECT="Atheneum"
 DATAFOLDER=".Atheneum"
+FINDFOLDER="\.Atheneum"
 CONFIG="atheneum.conf"
 PROJECT_FOLDER="$HOME/Atheneum"
 DAEMON_BINARY="atheneumd"
@@ -13,7 +14,7 @@ echo -e "${red} Checking Version ...${clear}"
 getcurrent=$(curl -q wget https://raw.githubusercontent.com/AtheneumChain/Scripts/master/versions | jq .updater | tr -d '"') > /dev/null 2>&1
 if ! [[ $ver == $getcurrent ]]; then
   echo -e "${red} Version outdated! Downloading new version ...${clear}"
-  wget https://raw.githubusercontent.com/AtheneumChain/Scripts/master/updater -O ./updater.sh > /dev/null 2>&1
+  wget https://raw.githubusercontent.com/AtheneumChain/Scripts/master/updater.sh -O ./updater.sh > /dev/null 2>&1
   chmod +x ./updater.sh
   sleep 2
   exec "./updater.sh"
@@ -36,7 +37,7 @@ workDir=$(dirname "$client")
 echo -e "${blu}Found ${yel}$client ${blu}in ${yel}$workDir ...${clr}"
 sleep 2
 #Get number of existing masternode directories
-DIR_COUNT=$(ls -la /root/ | grep "\$DATAFOLDER" | grep -c '^')
+DIR_COUNT=$(ls -la /root/ | grep -c $FINDFOLDER)
 
 if [[ $DIR_COUNT -lt 1 ]]; then
   echo -e "${red}No data directories found! Please make sure you have $PROJECT Masternodes installed on this server.${clr}"
