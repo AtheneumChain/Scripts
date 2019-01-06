@@ -35,3 +35,15 @@ Examples:
 aem Atheneum getinfo
 aem Atheneum2 masternode status
 ```
+
+# Atheneum Headless Binary updater 
+### This script will update one or several nodes running on the same machine.
+to download:
+```
+cd ~ && wget https://raw.githubusercontent.com/AtheneumChain/Scripts/master/update.sh -O ./update.sh && chmod +x ./update.sh
+```
+
+to execute the script:
+```
+./update.sh
+```
