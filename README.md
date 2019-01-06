@@ -40,10 +40,10 @@ aem Atheneum2 masternode status
 ### This script will update one or several nodes running on the same machine.
 to download:
 ```
-cd ~ && wget https://raw.githubusercontent.com/AtheneumChain/Scripts/master/update.sh -O ./update.sh && chmod +x ./update.sh
+cd ~ && wget https://raw.githubusercontent.com/AtheneumChain/Scripts/master/updater.sh -O ./updater.sh && chmod +x ./updater.sh
 ```
 
 to execute the script:
 ```
-./update.sh
+./updater.sh
 ```
