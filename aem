@@ -16,7 +16,7 @@ if [ -z $1 ]; then
 fi
 
 if [ $2 == "start" ]; then
-        /root/Atheneum/atheneum-cli -daemon -datadir=/root/.$1 -conf=/root/.$1/atheneum.conf
+        /root/Atheneum/atheneumd -daemon -datadir=/root/.$1 -conf=/root/.$1/atheneum.conf
         exit 1;
 fi
 
