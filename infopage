@@ -14,7 +14,7 @@ erase='\033[K'
 
 echo -e "${red} Checking Version ...${clear}"
 
-getcurrent=$(curl -q wget https://raw.githubusercontent.com/AtheneumChain/Scripts/master/versions | jq .infopage | tr -d '"') > /dev/null 2>&1
+getcurrent=$(curl -q https://raw.githubusercontent.com/AtheneumChain/Scripts/master/versions | jq .infopage | tr -d '"') > /dev/null 2>&1
 declare -a status
   status[0]="Initial Masternode Syncronization"
   status[1]="Syncing Masternode Sporks"
