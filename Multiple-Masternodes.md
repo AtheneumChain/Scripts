@@ -72,8 +72,12 @@ or
 ```
 systemctl restart networking.service
 ```
+## Step 4: ** AUTOMATIC METHOD ** Run the installer again for the automaed process OR skip to step 5 if you want to do it manually
+```
+cd ~ && wget https://raw.githubusercontent.com/AtheneumChain/Scripts/master/Masternode%20Setup/aeminstall.sh -O aeminstall.sh && chmod +x aeminstall.sh && ./aeminstall.sh
+```
 
-## Step 4: Download a few utilities and clone the data
+## Step 5: ** MANUAL METHOD ** Download a few utilities and clone the data 
 
 Copy and paste this into your console session (SSH)
 ```
