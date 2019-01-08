@@ -98,7 +98,7 @@ function singleNode()
     sleep 2
   done
 }
-
+ 
 function allNodes()
 {
   FINDFOLDER="\.Atheneum"
