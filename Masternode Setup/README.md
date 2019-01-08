@@ -1,5 +1,6 @@
 # Masternode-setup-guide
 [![Masternode Setup](https://img.youtube.com/vi/usplEkbInwM/0.jpg)](https://www.youtube.com/watch?v=usplEkbInwM)
+
 (video link above. CTRL-Click the picture to open in new tab)
 
 ## 1. Wallet Setup
