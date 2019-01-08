@@ -49,7 +49,7 @@ function check_existing()
   IP_NUM=$(echo "$IP_LIST" | wc -l)
 
   #Get number of existing masternode directories
-  DIR_COUNT=$(ls -la /root/ | grep "\.atheneum" | grep -c '^')
+  DIR_COUNT=$(ls -la /root/ | grep "\.Atheneum" | grep -c '^')
   
   #Check if there are more IPs than existing nodes
   if [[ $DIR_COUNT -ge $IP_NUM ]]; then
