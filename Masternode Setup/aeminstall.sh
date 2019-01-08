@@ -392,8 +392,8 @@ function start_wallet()
     echo
     echo -e "${BLUE}Congratulations, you've set up your masternode!${NC}"
     echo    
-    echo -e "${BLUE}Type ${YELLOW}aem.sh <data directory> <command> ${BLUE} to interact with your server(s). ${NC}"
-    echo -e "${BLUE}Ex: ${GREEN}aem.sh atheneum2 masternode status ${NC}"
+    echo -e "${BLUE}Type ${YELLOW}aem <data directory> <command> ${BLUE} to interact with your server(s). ${NC}"
+    echo -e "${BLUE}Ex: ${GREEN}aem Atheneum2 masternode status ${NC}"
     echo
 
     
