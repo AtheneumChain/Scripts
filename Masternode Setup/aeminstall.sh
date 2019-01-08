@@ -162,6 +162,7 @@ function install_prerequisites()
     echo
     #addid this for libdbcxx
     echo -ne "${GREEN} >Progress: ${BLUE}[###-----------]\r"
+    sudo apt update && sudo apt upgrade -y
     sudo apt install -y jq software-properties-common curl > /dev/null 2>&1
     if [ $? -ne 0 ]; then
        echo 
