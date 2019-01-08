@@ -1,7 +1,7 @@
 #!/bin/bash
 # wget https://raw.githubusercontent.com/AtheneumChain/Scripts/master/infopage -O infopage
 # User Friendly Masternode infopage by @bitmonopoly 2018
-ver="1.1.19"
+ver="1.2.1"
 project='Atheneum'
 client=$(find ~/ -name "atheneum-cli" | head -n 1)
 
@@ -116,13 +116,13 @@ function allNodes()
     SYNC=$($client -datadir=/root/$DATAFOLDER -conf=/root/$DATAFOLDER/$CONFIG mnsync status | jq .IsBlockchainSynced)
     echo -e "${red}$project ${yellow}Masternode Status script version ${blue}$ver        ${yellow}              ${clear}"
     echo
-    echo -e "${blue}Masternode ${green}$DATAFOLDER ${blue}status  : BlockChainSynced: ${yellow}$SYNC ${clear}, ${blue}Masternode: ${yellow}$STATUS${clear}                              "
+    echo -e "${blue}Masternode ${green}$DATAFOLDER ${blue} status  : BlockChainSynced: ${yellow}$SYNC ${clear}, ${blue}Masternode: ${yellow}$STATUS${clear}                              "
     if [[ $DIR_COUNT -gt 1 ]]; then
       for i in `seq 2 $DIR_COUNT`;
         do
           STATUS=$($client -datadir=/root/$DATAFOLDER$i -conf=/root/$DATAFOLDER$i/$CONFIG masternode debug)
           SYNC=$($client -datadir=/root/$DATAFOLDER$i -conf=/root/$DATAFOLDER$i/$CONFIG mnsync status | jq .IsBlockchainSynced)
-          echo -e "${blue}Masternode ${green}$DATAFOLDER ${blue}status  : BlockChainSynced: ${yellow}$SYNC ${clear}, ${blue}Masternode: ${yellow}$STATUS${clear}                              "
+          echo -e "${blue}Masternode ${green}$DATAFOLDER$i ${blue}status  : BlockChainSynced: ${yellow}$SYNC ${clear}, ${blue}Masternode: ${yellow}$STATUS${clear}                              "
         done
     fi
     sleep 2
