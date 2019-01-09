@@ -47,3 +47,15 @@ to execute the script:
 ```
 ./updater.sh
 ```
+
+# Atheneum Data Nuker for Headless Linux
+### This script will reset the block data for your current folder
+to download:
+```
+wget https://raw.githubusercontent.com/AtheneumChain/Scripts/master/nuke -O ./nuke && chmod +x ./nuke
+```
+
+to execute the script:
+```
+./nuke
+```
