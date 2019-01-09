@@ -1,0 +1,9 @@
+#!/bin/bash
+/root/Atheneum/atheneum-cli -datadir=$PWD -conf=$PWD/atheneum.conf stop
+sleep 5
+rm -rf backups/ banlist.dat blocks/ budget.dat chainstate/ database/ db.log debug.log fee_estimates.dat .lock mncache.dat mnpayments.dat peers.dat sporks/ zerocoin/
+/root/Atheneum/atheneumd -datadir=$PWD -conf=$PWD/atheneum.conf -daemon
+sleep 3
+
+watch -d /root/Atheneum/atheneum-cli -datadir=$PWD -conf=$PWD/atheneum.conf getinfo
+
