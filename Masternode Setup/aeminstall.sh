@@ -11,7 +11,7 @@
 # restore stderr
 #exec 2>/dev/tty
 
-VERSION="1.1.23"
+VERSION="1.1.24"
 PROJECT="Atheneum"
 PROJECT_FOLDER="$HOME/Atheneum"
 DAEMON_BINARY="atheneumd"
@@ -236,16 +236,16 @@ function copy_binaries()
       mkdir $DATADIR
       echo -e "${BLUE}Starting daemon ...(5 seconds)${NC}"
       echo -e "${YELLOW}Ignore any errors you see below. (5 seconds)${NC}"
-      $DAEMON -daemon > /dev/null 2>&1
-      PASSWORD=$(pwgen -s 64 1)
+      PASSWORD=$(pwgen -s 64 1) 
+      $DAEMON -conf=$CONF_FILE -datadir=$DATADIR -rpcuser=$RPC_USER -rpcpassword=$PASSWORD -daemon> /dev/null 2>&1
       sleep 10
-      $STARTCLI stop
+      $STARTCLI -conf=$CONF_FILE -datadir=$DATADIR -rpcuser=$RPC_USER -rpcpassword=$PASSWORD stop
 cat <<EOF > $CONF_FILE
 rpcuser=$RPC_USER
 rpcpassword=$PASSWORD
 EOF
       sleep 3
-      $DAEMON -daemon > /dev/null 2>&1
+      $DAEMON -conf=$CONF_FILE -datadir=$DATADIR -rpcuser=$RPC_USER -rpcpassword=$PASSWORD -daemon> /dev/null 2>&1
       sleep 10
   else
       echo -e "${RED}Binary not found! Please scroll up to see errors above : $RETVAL ${NC}"
@@ -258,14 +258,14 @@ EOF
 function create_conf_file()
 {
   echo
-  GENKEY=$($STARTCLI masternode genkey)
+  GENKEY=$($STARTCLI -conf=$CONF_FILE -datadir=$DATADIR -rpcuser=$RPC_USER -rpcpassword=$PASSWORD masternode genkey)
   echo
   echo -e "${BLUE}Creating conf file...${NC}"
   echo -e "${YELLOW}Ignore any errors you see below. (5 seconds)${NC}"
   sleep 5
   echo
   echo -e "${BLUE}Stopping the daemon and writing config (5 seconds)${NC}"
-  $STARTCLI stop
+  $STARTCLI -conf=$CONF_FILE -datadir=$DATADIR -rpcuser=$RPC_USER -rpcpassword=$PASSWORD stop
   sleep 5
   
 cat <<EOF > $CONF_FILE
