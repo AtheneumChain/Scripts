@@ -64,10 +64,10 @@ to execute the script:
 ### This script will install all of the necessary files for the Ubuntu QT wallet and/or headless binaries.
 to download:
 ```
-wget https://raw.githubusercontent.com/AtheneumChain/Scripts/master/nuke -O ./nuke && chmod +x ./nuke
+wget https://raw.githubusercontent.com/AtheneumChain/Scripts/master/UbuntuDepends.sh -O ./UbuntuDepends.sh && chmod +x ./UbuntuDepends.sh
 ```
 
 to execute the script:
 ```
-./nuke
+./UbuntuDepends.sh
 ```
