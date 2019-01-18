@@ -107,8 +107,8 @@ else
     echo -e "${blue}$logresult${clear}"
     echo -e "${erase}${yellow}$pad${clear}"
     echo -e "${erase}${green} Press CTRL-C to exit. Updated every 2 seconds. ${blue} 2018               @bitmonopoly${clear}"
-  
     sleep 2
+  fi
   done
 }
  
