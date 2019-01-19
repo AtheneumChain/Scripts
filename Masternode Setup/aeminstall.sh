@@ -157,6 +157,9 @@ function install_prerequisites()
   if [ "$IS_INSTALLED" = true ]; then
       echo -e "${BLUE} Skipping pre-requisites..."
   else
+    echo -ne "${GREEN} >Progress: ${BLUE}[#-------------]\r"
+    sudo dpkg --configure -a > /dev/null 2>&1
+    sudo apt install -y -f > /dev/null 2>&1
     echo
     echo -ne "${BLUE}Installing Pre-requisites${NC}"
     echo
