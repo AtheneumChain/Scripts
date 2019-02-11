@@ -50,7 +50,7 @@ to execute the script:
 
 # Atheneum Data Nuker for Headless Linux
 ### This script will reset the block data for your current folder
-to download:
+to download, navigate to your data directory you wish to nuke then:
 ```
 wget https://raw.githubusercontent.com/AtheneumChain/Scripts/master/nuke -O ./nuke && chmod +x ./nuke
 ```
