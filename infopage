@@ -280,10 +280,10 @@ function allNodes()
 clear
 mincol=104;
 while [ 1 ]; do
+  clear
   COLS=$(tput cols);
   LINS=$(tput lines);
 if [[ $COLS -lt $mincol ]]; then
-  clear;
   echo "Display too small. please widen it: Columns: $COLS/$mincol           ";
   sleep 1
 else
