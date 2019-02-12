@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ver="1.0.5"
+ver="1.0.6"
 PROJECT="Atheneum"
 DATAFOLDER=".Atheneum"
 FINDFOLDER="\.Atheneum"
@@ -79,6 +79,7 @@ if [[ $DIR_COUNT -gt 1 ]]; then
     do 
       echo -e "${grn}Starting Daemon using datadir /$DATAFOLDER$i"
       $workDir/$DAEMON_BINARY -datadir=/root/$DATAFOLDER$i -conf=/root/$DATAFOLDER$i/$CONFIG -daemon
+      sleep 4
     done
 fi
 echo
