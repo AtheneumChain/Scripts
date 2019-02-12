@@ -84,7 +84,7 @@ else
     asset=$(echo $mnsync | jq .RequestedMasternodeAssets)
     attempt=$(echo $mnsync | jq .RequestedMasternodeAttempt)
   
-    logresult=$(tail -n $(( $LINS - 18 )) $datadir/debug.log | pr -T -o 2 | cut -c 1-$(( $COLS - 2 )) | awk '{printf("%.'$(( $COLS - 2 ))'s \n", $0"                                                    ")}')
+    logresult=$(tail -n $(( $LINS - 18 )) $datadir/debug.log | pr -T -o 2 | cut -c 1-$(( $COLS - 2 )) | awk '{printf("%.'$(( $COLS - 2 ))'s \n", $0"                                                                                                                                                 ")}')
   
     #clear
     tput cup 0 0
