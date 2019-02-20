@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ver="1.0.6"
+ver="1.0.7"
 PROJECT="Atheneum"
 DATAFOLDER=".Atheneum"
 FINDFOLDER="\.Atheneum"
@@ -10,21 +10,23 @@ DAEMON_BINARY="atheneumd"
 CLI_BINARY="atheneum-cli"
 REPO="https://github.com/AtheneumChain/Atheneum/releases"
 
-echo -e "${red} Checking Version ...${clear}"
+red='\033[1;31m'
+grn='\033[1;32m'
+yel='\033[1;33m'
+blu='\033[1;36m'
+clr='\033[0m'
+
+echo -e "${red} Checking Version ...${clr}"
 getcurrent=$(curl -q wget https://raw.githubusercontent.com/AtheneumChain/Scripts/master/versions | jq .updater | tr -d '"') > /dev/null 2>&1
 if ! [[ $ver == $getcurrent ]]; then
-  echo -e "${red} Version outdated! Downloading new version ...${clear}"
+  echo -e "${red} Version outdated! Downloading new version ...${clr}"
   wget https://raw.githubusercontent.com/AtheneumChain/Scripts/master/updater.sh -O ./updater.sh > /dev/null 2>&1
   chmod +x ./updater.sh
   sleep 2
   exec "./updater.sh"
 fi
  
-red='\033[1;31m'
-grn='\033[1;32m'
-yel='\033[1;33m'
-blu='\033[1;36m'
-clr='\033[0m'
+
 
 printf '\e[48;5;0m'
 clear
@@ -91,4 +93,5 @@ echo -e "${red} !!! IMPORTANT !!! ${grn}"
 echo -e "Don't forget to update your QT wallet with the latest executables. \nYou can find them at the official repo at:"
 echo -e "${blu}$REPO${clr}"
 echo
-
+echo -e "${grn}Also, on protocol upgrades your nodes will go ${red}MISSING ${grn}in your QT wallet after a few hours. Please ${blu}Start Missing ${grn}when they do.${clr}"
+echo
