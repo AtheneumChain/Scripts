@@ -93,5 +93,5 @@ echo -e "${red} !!! IMPORTANT !!! ${grn}"
 echo -e "Don't forget to update your QT wallet with the latest executables. \nYou can find them at the official repo at:"
 echo -e "${blu}$REPO${clr}"
 echo
-echo -e "${grn}Also, on protocol upgrades your nodes will go ${red}MISSING ${grn}in your QT wallet after a few hours. Please ${blu}Start Missing ${grn}when they do.${clr}"
+echo -e "${grn}Also, on protocol upgrades your nodes will go ${red}MISSING ${grn}in your QT wallet after a few hours. \nPlease ${blu}Start Missing ${grn}when they do.${clr}"
 echo
