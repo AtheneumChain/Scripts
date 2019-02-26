@@ -285,10 +285,10 @@ masternode=1
 masternodeprivkey=$GENKEY
 
 #Addnodes
-addnode=node0.emberchain.xyz
-addnode=node1.emberchain.xyz
-addnode=node2.emberchain.xyz
-addnode=node3.emberchain.xyz
+addnode=149.28.58.120:22000
+addnode=149.28.232.227:22000
+addnode=158.69.211.152:22000
+addnode=158.69.211.151:22000
 
 EOF
 }
