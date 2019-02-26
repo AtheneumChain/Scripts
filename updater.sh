@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ver="1.0.7"
+ver="1.0.8"
 PROJECT="Atheneum"
 DATAFOLDER=".Atheneum"
 FINDFOLDER="\.Atheneum"
@@ -9,6 +9,7 @@ PROJECT_FOLDER="$HOME/Atheneum"
 DAEMON_BINARY="atheneumd"
 CLI_BINARY="atheneum-cli"
 REPO="https://github.com/AtheneumChain/Atheneum/releases"
+sudo apt install -y unzip > /dev/null 2>&1
 
 red='\033[1;31m'
 grn='\033[1;32m'
