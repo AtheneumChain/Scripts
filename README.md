@@ -43,8 +43,9 @@ to download:
 cd ~ && wget https://raw.githubusercontent.com/AtheneumChain/Scripts/master/updater.sh -O ./updater.sh && chmod +x ./updater.sh
 ```
 
-to execute the script:
+to execute the script (if you need to launch it again for some reason):
 ```
+cd ~
 ./updater.sh
 ```
 
