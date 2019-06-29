@@ -345,7 +345,7 @@ function start_wallet()
     $DAEMON_START
     echo -e "${BLUE}Starting Synchronization...${NC}"
     sleep 3
-    APIBLOCKS=$(curl -s https://www.coinexplorer.net/api/v1/AEM/block/latest | jq .result.height)
+    APIBLOCKS=$(curl -s https://www.coinexplorer.net/api/v1/AEM/block/latest | jq .result.height | tr -d '"')
     CURBLOCK=$($CLI getinfo | jq .blocks)
 
     echo -ne "${YELLOW}Current Block: ${GREEN}$APIBLOCKS${NC}\n\n"
